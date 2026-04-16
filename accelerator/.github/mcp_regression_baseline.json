@@ -1,0 +1,7 @@
+{
+  "baseline_run_id": "run_20260312_211438_80453",
+  "min_valid_ratio": 0.25,
+  "max_valid_ratio_drop_abs": 0.20,
+  "warn_best_cycles_regression_pct": 10.0,
+  "warn_avg_valid_cycles_regression_pct": 10.0
+}

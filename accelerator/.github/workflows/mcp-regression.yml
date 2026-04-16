@@ -1,0 +1,68 @@
+name: MCP Regression Gate
+
+on:
+  pull_request:
+    paths:
+      - "rtl/**"
+      - "firmware/**"
+      - "auto_tuner/**"
+      - "compiler/**"
+      - "mcp/**"
+      - ".github/workflows/mcp-regression.yml"
+      - ".github/mcp_regression_baseline.json"
+      - "Makefile"
+      - "README.md"
+  workflow_dispatch:
+
+jobs:
+  mcp-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      ACCELERA_RL_PYTHON: ${{ github.workspace }}/.venv-mcp/bin/python
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            make \
+            g++ \
+            verilator \
+            gcc-riscv64-unknown-elf \
+            binutils-riscv64-unknown-elf
+
+      - name: Install Python dependencies
+        run: |
+          python -m venv .venv-mcp
+          .venv-mcp/bin/python -m pip install --upgrade pip
+          .venv-mcp/bin/python -m pip install -r mcp/requirements.txt
+          .venv-mcp/bin/python -m pip install stable-baselines3 gymnasium numpy
+
+      - name: Run MCP workflow validation
+        run: |
+          .venv-mcp/bin/python mcp/validate_workflow.py --output data/mcp_validation_report_ci.json
+
+      - name: Run regression gate
+        run: |
+          .venv-mcp/bin/python mcp/regression_gate.py \
+            --report data/mcp_validation_report_ci.json \
+            --baseline-config .github/mcp_regression_baseline.json
+
+      - name: Upload validation artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mcp-validation-artifacts
+          path: |
+            data/mcp_validation_report_ci.json
+            data/rl_eval_matrix_*.csv
+            data/mcp_jobs/*.log
+          if-no-files-found: ignore

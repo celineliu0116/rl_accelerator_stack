@@ -1,0 +1,530 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1520 1560" font-family="'Courier New', Consolas, monospace">
+  <defs>
+    <marker id="a" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#b0bec5"/>
+    </marker>
+    <marker id="ab" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#818cf8"/>
+    </marker>
+    <marker id="am" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e8a735"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34d399"/>
+    </marker>
+    <marker id="ar" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f87171"/>
+    </marker>
+    <marker id="ap" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c084fc"/>
+    </marker>
+    <marker id="ay" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24"/>
+    </marker>
+    <marker id="ak" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fb7185"/>
+    </marker>
+
+    <!-- Glow filters -->
+    <filter id="glow-blue" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#6366f1" flood-opacity="0.25"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-amber" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#d97706" flood-opacity="0.25"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-green" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#059669" flood-opacity="0.25"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-rose" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#e11d48" flood-opacity="0.2"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--                 BACKGROUND                  -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect width="1520" height="1560" rx="8" fill="#0a0c10"/>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <rect width="40" height="40" fill="none"/>
+    <circle cx="40" cy="40" r="0.5" fill="#ffffff" opacity="0.04"/>
+  </pattern>
+  <rect width="1520" height="1560" fill="url(#grid)"/>
+
+
+  <!-- ╔═══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║  LAYER 0: HOST SOFTWARE / ASIC AGENT ENGINE (Rose/Pink)      ║ -->
+  <!-- ╚═══════════════════════════════════════════════════════════════╝ -->
+  <rect x="20" y="20" width="1480" height="260" rx="8" fill="#1a0a14" stroke="#e11d48" stroke-width="1.5" filter="url(#glow-rose)"/>
+  <rect x="20" y="20" width="1480" height="32" rx="8" fill="#e11d48" opacity="0.1"/>
+  <text x="760" y="44" text-anchor="middle" fill="#fda4af" font-size="15" font-weight="bold">Host Software / ASIC Agent Engine  (offline · Python)</text>
+
+  <!-- RL Daemon -->
+  <rect x="50" y="68" width="380" height="105" rx="6" fill="#2a0f1e" stroke="#be123c" stroke-width="1"/>
+  <text x="240" y="92" text-anchor="middle" fill="#fda4af" font-size="14" font-weight="bold">RL Daemon (PPO Agent)</text>
+  <text x="240" y="112" text-anchor="middle" fill="#d4a0b0" font-size="11">explores 6D HW/SW action space:</text>
+  <text x="240" y="128" text-anchor="middle" fill="#d4a0b0" font-size="10">tile_M, tile_N, tile_K, prefetch_depth,</text>
+  <text x="240" y="142" text-anchor="middle" fill="#d4a0b0" font-size="10">dataflow_mode, schedule_order</text>
+  <text x="240" y="162" text-anchor="middle" fill="#fb7185" font-size="11" font-weight="bold">policy π(s) → action a</text>
+
+  <!-- ML Workload input -->
+  <rect x="50" y="192" width="170" height="42" rx="5" fill="#2a0f1e" stroke="#be123c" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="135" y="210" text-anchor="middle" fill="#fda4af" font-size="12" font-weight="bold">ML Workload</text>
+  <text x="135" y="226" text-anchor="middle" fill="#d4a0b0" font-size="10">ONNX / PyTorch model</text>
+
+  <!-- BKM Ledger -->
+  <rect x="500" y="68" width="320" height="105" rx="6" fill="#2a0f1e" stroke="#be123c" stroke-width="1"/>
+  <text x="660" y="92" text-anchor="middle" fill="#fda4af" font-size="14" font-weight="bold">BKM Ledger (DB)</text>
+  <text x="660" y="112" text-anchor="middle" fill="#d4a0b0" font-size="11">Best Known Methods store:</text>
+  <text x="660" y="130" text-anchor="middle" fill="#d4a0b0" font-size="10">• tile sizes, prefetch depth</text>
+  <text x="660" y="146" text-anchor="middle" fill="#d4a0b0" font-size="10">• dataflow mode (dense/sparse)</text>
+  <text x="660" y="162" text-anchor="middle" fill="#d4a0b0" font-size="10">• best schedule per layer shape</text>
+
+  <!-- Python Compiler -->
+  <rect x="890" y="68" width="380" height="105" rx="6" fill="#2a0f1e" stroke="#be123c" stroke-width="1"/>
+  <text x="1080" y="92" text-anchor="middle" fill="#fda4af" font-size="14" font-weight="bold">Python Compiler</text>
+  <text x="1080" y="112" text-anchor="middle" fill="#d4a0b0" font-size="11">inputs: BKM Ledger + ML Workload</text>
+  <text x="1080" y="130" text-anchor="middle" fill="#d4a0b0" font-size="11">outputs: compiled firmware blob</text>
+  <text x="1080" y="162" text-anchor="middle" fill="#fb7185" font-size="11" font-weight="bold">→ model_blob.h</text>
+
+  <!-- model_blob.h artifact box -->
+  <rect x="1000" y="192" width="260" height="42" rx="5" fill="#1a0a14" stroke="#fb7185" stroke-width="1.5"/>
+  <text x="1130" y="210" text-anchor="middle" fill="#fb7185" font-size="13" font-weight="bold">model_blob.h</text>
+  <text x="1130" y="226" text-anchor="middle" fill="#d4a0b0" font-size="10">CSR/Dense tensors + 64B header</text>
+
+  <!-- ── Host internal arrows ── -->
+  <!-- RL → BKM -->
+  <line x1="430" y1="120" x2="500" y2="120" stroke="#fb7185" stroke-width="1.3" marker-end="url(#ak)"/>
+  <text x="465" y="113" text-anchor="middle" fill="#fb7185" font-size="9">best params</text>
+
+  <!-- BKM → Compiler -->
+  <line x1="820" y1="120" x2="890" y2="120" stroke="#fb7185" stroke-width="1.3" marker-end="url(#ak)"/>
+  <text x="855" y="113" text-anchor="middle" fill="#fb7185" font-size="9">config</text>
+
+  <!-- Workload → Compiler -->
+  <path d="M220,213 L460,213 L460,140 L890,140" fill="none" stroke="#fb7185" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#ak)"/>
+  <text x="500" y="206" fill="#d4a0b0" font-size="9">model graph</text>
+
+  <!-- Compiler → blob -->
+  <line x1="1080" y1="173" x2="1080" y2="192" stroke="#fb7185" stroke-width="1.2" marker-end="url(#ak)"/>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!--   model_blob.h → loads into Main Memory (crossing boundary)    -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <path d="M1130,234 L1130,258 L810,258 L810,1012" fill="none" stroke="#fb7185" stroke-width="2" marker-end="url(#ak)"/>
+  <rect x="812" y="258" width="120" height="16" rx="3" fill="#0a0c10"/>
+  <text x="872" y="270" text-anchor="middle" fill="#fb7185" font-size="10" font-weight="bold">hex load</text>
+
+
+  <!-- ╔═══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║           LAYER 1: riscv_top SoC (existing, shifted)          ║ -->
+  <!-- ╚═══════════════════════════════════════════════════════════════╝ -->
+  <rect x="20" y="310" width="1480" height="910" rx="8" fill="none" stroke="#30363d" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <rect x="580" y="294" width="260" height="24" rx="4" fill="#0a0c10"/>
+  <text x="710" y="312" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="bold">riscv_top (SoC) — Verilator</text>
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--               CPU BLOCK (Left)                      -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="40" y="340" width="560" height="640" rx="6" fill="#0f1629" stroke="#6366f1" stroke-width="1.5" filter="url(#glow-blue)"/>
+  <rect x="40" y="340" width="560" height="30" rx="6" fill="#6366f1" opacity="0.12"/>
+  <text x="320" y="360" text-anchor="middle" fill="#a5b4fc" font-size="14" font-weight="bold">RV32IM CPU (Riscv151)</text>
+
+  <!-- ── Pipeline: IF → ID → EX → WB ── -->
+  <rect x="65" y="385" width="95" height="44" rx="5" fill="#1e1b4b" stroke="#4f46e5" stroke-width="1.2"/>
+  <text x="112" y="405" text-anchor="middle" fill="#c7d2fe" font-size="14" font-weight="bold">IF</text>
+  <text x="112" y="422" text-anchor="middle" fill="#a0aec0" font-size="10">Fetch 64b</text>
+
+  <rect x="171" y="381" width="4" height="52" rx="2" fill="#4f46e5" opacity="0.6"/>
+  <text x="173" y="378" text-anchor="middle" fill="#818cf8" font-size="8">IF/ID</text>
+
+  <rect x="186" y="385" width="95" height="44" rx="5" fill="#1e1b4b" stroke="#4f46e5" stroke-width="1.2"/>
+  <text x="233" y="405" text-anchor="middle" fill="#c7d2fe" font-size="14" font-weight="bold">ID</text>
+  <text x="233" y="422" text-anchor="middle" fill="#a0aec0" font-size="10">Decode ×2</text>
+
+  <rect x="292" y="381" width="4" height="52" rx="2" fill="#4f46e5" opacity="0.6"/>
+  <text x="294" y="378" text-anchor="middle" fill="#818cf8" font-size="8">ID/EX</text>
+
+  <rect x="307" y="385" width="95" height="44" rx="5" fill="#1e1b4b" stroke="#4f46e5" stroke-width="1.2"/>
+  <text x="354" y="405" text-anchor="middle" fill="#c7d2fe" font-size="14" font-weight="bold">EX</text>
+  <text x="354" y="422" text-anchor="middle" fill="#a0aec0" font-size="10">Execute ×2</text>
+
+  <rect x="413" y="381" width="4" height="52" rx="2" fill="#4f46e5" opacity="0.6"/>
+  <text x="415" y="378" text-anchor="middle" fill="#818cf8" font-size="8">EX/WB</text>
+
+  <rect x="428" y="385" width="95" height="44" rx="5" fill="#1e1b4b" stroke="#4f46e5" stroke-width="1.2"/>
+  <text x="475" y="405" text-anchor="middle" fill="#c7d2fe" font-size="14" font-weight="bold">WB</text>
+  <text x="475" y="422" text-anchor="middle" fill="#a0aec0" font-size="10">Writeback</text>
+
+  <!-- Pipeline arrows -->
+  <line x1="160" y1="407" x2="171" y2="407" stroke="#818cf8" stroke-width="1.5" marker-end="url(#ab)"/>
+  <line x1="175" y1="407" x2="186" y2="407" stroke="#818cf8" stroke-width="1.5" marker-end="url(#ab)"/>
+  <line x1="281" y1="407" x2="292" y2="407" stroke="#818cf8" stroke-width="1.5" marker-end="url(#ab)"/>
+  <line x1="296" y1="407" x2="307" y2="407" stroke="#818cf8" stroke-width="1.5" marker-end="url(#ab)"/>
+  <line x1="402" y1="407" x2="413" y2="407" stroke="#818cf8" stroke-width="1.5" marker-end="url(#ab)"/>
+  <line x1="417" y1="407" x2="428" y2="407" stroke="#818cf8" stroke-width="1.5" marker-end="url(#ab)"/>
+
+  <!-- ── Branch Prediction ── -->
+  <rect x="55" y="458" width="118" height="45" rx="5" fill="#1a1a2e" stroke="#4338ca" stroke-width="1"/>
+  <text x="114" y="478" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="bold">GShare BHT</text>
+  <text x="114" y="494" text-anchor="middle" fill="#a0aec0" font-size="10">direction pred</text>
+
+  <rect x="55" y="512" width="118" height="40" rx="5" fill="#1a1a2e" stroke="#4338ca" stroke-width="1"/>
+  <text x="114" y="536" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="bold">Direct BTB</text>
+
+  <line x1="110" y1="429" x2="110" y2="458" stroke="#818cf8" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="118" y1="429" x2="118" y2="458" stroke="#818cf8" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- ── Register File ── -->
+  <rect x="186" y="458" width="118" height="45" rx="5" fill="#1a1a2e" stroke="#4338ca" stroke-width="1"/>
+  <text x="245" y="478" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="bold">Reg File</text>
+  <text x="245" y="494" text-anchor="middle" fill="#a0aec0" font-size="10">4R / 2W × 32b</text>
+  <line x1="233" y1="429" x2="233" y2="458" stroke="#818cf8" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#ab)"/>
+
+  <!-- ── Dual Hazard ── -->
+  <rect x="186" y="512" width="118" height="50" rx="5" fill="#1a1a2e" stroke="#4338ca" stroke-width="1"/>
+  <text x="245" y="532" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="bold">Dual Hazard</text>
+  <text x="245" y="548" text-anchor="middle" fill="#a0aec0" font-size="10">fwd + stall</text>
+
+  <!-- ── Execution Lanes ── -->
+  <rect x="318" y="458" width="215" height="45" rx="5" fill="#1a1a2e" stroke="#4338ca" stroke-width="1"/>
+  <text x="425" y="478" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="bold">Lane 0 — ALU + MUL</text>
+  <text x="425" y="494" text-anchor="middle" fill="#a0aec0" font-size="10">add sub mul sll srl sra</text>
+
+  <rect x="318" y="512" width="215" height="40" rx="5" fill="#1a1a2e" stroke="#4338ca" stroke-width="1"/>
+  <text x="425" y="532" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="bold">Lane 1 — ALU only</text>
+  <text x="425" y="548" text-anchor="middle" fill="#a0aec0" font-size="10">add sub and or xor slt</text>
+
+  <line x1="354" y1="429" x2="354" y2="458" stroke="#818cf8" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#ab)"/>
+
+  <!-- ── Writeback path ── -->
+  <path d="M475,429 L475,445 L270,445 L270,458" fill="none" stroke="#c084fc" stroke-width="1.1" stroke-dasharray="4,2" marker-end="url(#ap)"/>
+  <text x="375" y="443" text-anchor="middle" fill="#c084fc" font-size="9">2× writeback</text>
+
+  <!-- ── Forwarding ── -->
+  <path d="M338,503 L310,503 L310,535 L304,535" fill="none" stroke="#f87171" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#ar)"/>
+  <text x="314" y="568" fill="#f87171" font-size="9" font-weight="bold">EX→fwd</text>
+
+  <!-- ╔══════════════════════════════════════════════╗ -->
+  <!-- ║  FIRMWARE DISPATCHER (new layer inside CPU)   ║ -->
+  <!-- ╚══════════════════════════════════════════════╝ -->
+  <rect x="55" y="585" width="530" height="175" rx="6" fill="#12102a" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <rect x="55" y="585" width="530" height="24" rx="6" fill="#7c3aed" opacity="0.1"/>
+  <text x="320" y="602" text-anchor="middle" fill="#c4b5fd" font-size="13" font-weight="bold">Firmware: inference_generic.c</text>
+
+  <!-- MorphCore Dispatcher -->
+  <rect x="80" y="620" width="195" height="55" rx="5" fill="#1e1545" stroke="#8b5cf6" stroke-width="1.2"/>
+  <text x="177" y="642" text-anchor="middle" fill="#c4b5fd" font-size="12" font-weight="bold">MorphCore Dispatcher</text>
+  <text x="177" y="660" text-anchor="middle" fill="#a09ac0" font-size="10">reads header → routes math</text>
+
+  <!-- 3-way switch paths -->
+  <!-- Mode 0: Dense → MMIO → HW Accel -->
+  <rect x="310" y="618" width="250" height="35" rx="5" fill="#0d2b1f" stroke="#059669" stroke-width="1"/>
+  <text x="435" y="636" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="bold">Mode 0 — Dense → MMIO</text>
+  <text x="435" y="648" text-anchor="middle" fill="#7ecba1" font-size="9">dispatches to HW accelerator</text>
+
+  <!-- Mode 1: Sparse Intersection → CPU lanes -->
+  <rect x="310" y="660" width="250" height="32" rx="5" fill="#1e1b4b" stroke="#4f46e5" stroke-width="1"/>
+  <text x="435" y="680" text-anchor="middle" fill="#c7d2fe" font-size="11" font-weight="bold">Mode 1 — Sparse Intersect → CPU</text>
+
+  <!-- Mode 2: Outer Product → CPU lanes -->
+  <rect x="310" y="698" width="250" height="32" rx="5" fill="#1e1b4b" stroke="#4f46e5" stroke-width="1"/>
+  <text x="435" y="718" text-anchor="middle" fill="#c7d2fe" font-size="11" font-weight="bold">Mode 2 — Outer Product → CPU</text>
+
+  <!-- Dispatcher → Mode paths (3-way fan-out) -->
+  <line x1="275" y1="635" x2="310" y2="635" stroke="#34d399" stroke-width="1.3" marker-end="url(#ag)"/>
+  <line x1="275" y1="648" x2="275" y2="676" stroke="#818cf8" stroke-width="1"/>
+  <line x1="275" y1="676" x2="310" y2="676" stroke="#818cf8" stroke-width="1.3" marker-end="url(#ab)"/>
+  <line x1="275" y1="676" x2="275" y2="714" stroke="#818cf8" stroke-width="1"/>
+  <line x1="275" y1="714" x2="310" y2="714" stroke="#818cf8" stroke-width="1.3" marker-end="url(#ab)"/>
+
+  <!-- Mode 1/2 → Lane 0 (CPU-side stubs) -->
+  <text x="540" y="690" fill="#818cf8" font-size="9" font-style="italic">CPU-side</text>
+  <text x="540" y="700" fill="#818cf8" font-size="9" font-style="italic">SW stubs</text>
+
+  <!-- Address Decode -->
+  <rect x="80" y="775" width="460" height="45" rx="5" fill="#1a1a2e" stroke="#6366f1" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="310" y="793" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="bold">Address Decode</text>
+  <text x="310" y="808" text-anchor="middle" fill="#a0aec0" font-size="11">addr[31]=0 → D-Cache      addr[31]=1 → MMIO</text>
+
+  <!-- Mode 0 → Addr Decode MMIO path -->
+  <path d="M435,653 L575,653 L575,800 L540,800" fill="none" stroke="#34d399" stroke-width="1.2" marker-end="url(#ag)"/>
+
+  <!-- Addr Decode → D-Cache -->
+  <path d="M230,820 L230,850 L580,850 L580,630 L620,630" fill="none" stroke="#818cf8" stroke-width="1.2" marker-end="url(#ab)"/>
+
+  <!-- Addr Decode → MMIO path drops down -->
+  <line x1="430" y1="820" x2="430" y2="1100" stroke="#c084fc" stroke-width="1.2"/>
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--            MEMORY SUBSYSTEM (Center)                -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="640" y="340" width="310" height="740" rx="6" fill="#17130a" stroke="#d97706" stroke-width="1.5" filter="url(#glow-amber)"/>
+  <rect x="640" y="340" width="310" height="30" rx="6" fill="#d97706" opacity="0.1"/>
+  <text x="795" y="362" text-anchor="middle" fill="#fbbf24" font-size="14" font-weight="bold">Memory151</text>
+
+  <!-- I-Cache -->
+  <rect x="670" y="390" width="250" height="72" rx="5" fill="#1c1708" stroke="#b45309" stroke-width="1"/>
+  <text x="795" y="414" text-anchor="middle" fill="#fcd34d" font-size="13" font-weight="bold">I-Cache</text>
+  <text x="795" y="432" text-anchor="middle" fill="#c4a862" font-size="11">2-way SA · 64B line · LRU</text>
+  <text x="795" y="450" text-anchor="middle" fill="#c4a862" font-size="11">returns 64b (2 insts for DI)</text>
+
+  <!-- D-Cache -->
+  <rect x="670" y="560" width="250" height="95" rx="5" fill="#1c1708" stroke="#b45309" stroke-width="1"/>
+  <text x="795" y="584" text-anchor="middle" fill="#fcd34d" font-size="13" font-weight="bold">D-Cache / no_cache_mem</text>
+  <text x="795" y="604" text-anchor="middle" fill="#c4a862" font-size="11">CPU port: 32b load/store</text>
+  <text x="795" y="620" text-anchor="middle" fill="#c4a862" font-size="11">DMA port: 256b burst</text>
+  <text x="795" y="638" text-anchor="middle" fill="#c4a862" font-size="11">uncached MMIO region</text>
+
+  <!-- Arbiter -->
+  <rect x="710" y="740" width="170" height="50" rx="5" fill="#1c1708" stroke="#b45309" stroke-width="1"/>
+  <text x="795" y="764" text-anchor="middle" fill="#fcd34d" font-size="13" font-weight="bold">Arbiter</text>
+  <text x="795" y="780" text-anchor="middle" fill="#c4a862" font-size="11">round-robin I / D</text>
+
+  <!-- Main Memory -->
+  <rect x="670" y="870" width="250" height="80" rx="5" fill="#1c1708" stroke="#b45309" stroke-width="1"/>
+  <text x="795" y="898" text-anchor="middle" fill="#fcd34d" font-size="13" font-weight="bold">Main Memory</text>
+  <text x="795" y="916" text-anchor="middle" fill="#c4a862" font-size="11">(ExtMemModel)</text>
+  <text x="795" y="932" text-anchor="middle" fill="#c4a862" font-size="10">single-port · 150-cycle latency</text>
+  <text x="795" y="944" text-anchor="middle" fill="#c4a862" font-size="10">hex-loaded from sim_main.cpp</text>
+
+  <!-- I-Cache → Arbiter -->
+  <line x1="760" y1="462" x2="760" y2="740" stroke="#e8a735" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#am)"/>
+  <text x="750" y="722" text-anchor="end" fill="#c4a862" font-size="10">P0</text>
+  <!-- D-Cache → Arbiter -->
+  <line x1="830" y1="655" x2="830" y2="740" stroke="#e8a735" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#am)"/>
+  <text x="840" y="722" fill="#c4a862" font-size="10">P1</text>
+  <!-- Arbiter → Main Mem -->
+  <line x1="795" y1="790" x2="795" y2="870" stroke="#e8a735" stroke-width="1.5" marker-end="url(#am)"/>
+
+  <!-- model_blob.h loads into Main Mem (arrow lands here) -->
+  <!-- (The path from the Host layer targets y=1012 at x=810, which is inside Main Memory) -->
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--       CPU ↔ I-Cache Interface                       -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="606" y="381" width="52" height="16" rx="3" fill="#0a0c10"/>
+  <text x="632" y="393" text-anchor="middle" fill="#a0aec0" font-size="10" font-style="italic">icache</text>
+  <line x1="600" y1="406" x2="670" y2="406" stroke="#b0bec5" stroke-width="1.3" marker-end="url(#a)"/>
+  <text x="632" y="402" text-anchor="middle" fill="#b0bec5" font-size="11">addr →</text>
+  <line x1="670" y1="426" x2="600" y2="426" stroke="#b0bec5" stroke-width="1.8" marker-end="url(#a)"/>
+  <text x="632" y="422" text-anchor="middle" fill="#b0bec5" font-size="11">← 64b inst</text>
+  <line x1="670" y1="446" x2="600" y2="446" stroke="#f87171" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#ar)"/>
+  <text x="632" y="442" text-anchor="middle" fill="#f87171" font-size="10">← stall</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--       CPU ↔ D-Cache Interface                       -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="606" y="556" width="55" height="16" rx="3" fill="#0a0c10"/>
+  <text x="633" y="568" text-anchor="middle" fill="#a0aec0" font-size="10" font-style="italic">dcache</text>
+  <line x1="600" y1="590" x2="670" y2="590" stroke="#b0bec5" stroke-width="1.3" marker-end="url(#a)"/>
+  <text x="632" y="586" text-anchor="middle" fill="#b0bec5" font-size="11">addr →</text>
+  <line x1="600" y1="610" x2="670" y2="610" stroke="#b0bec5" stroke-width="1.3" marker-end="url(#a)"/>
+  <text x="632" y="606" text-anchor="middle" fill="#b0bec5" font-size="10">we+wdata →</text>
+  <line x1="670" y1="630" x2="600" y2="630" stroke="#b0bec5" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="632" y="626" text-anchor="middle" fill="#b0bec5" font-size="11">← 32b rdata</text>
+  <line x1="670" y1="650" x2="600" y2="650" stroke="#f87171" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#ar)"/>
+  <text x="632" y="646" text-anchor="middle" fill="#f87171" font-size="10">← stall</text>
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--          MORPHCORE TARGET RTL (Right)                -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="1000" y="340" width="460" height="740" rx="6" fill="#061a11" stroke="#059669" stroke-width="1.5" filter="url(#glow-green)"/>
+  <rect x="1000" y="340" width="460" height="30" rx="6" fill="#059669" opacity="0.1"/>
+  <text x="1230" y="362" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="bold">MorphCore Target RTL</text>
+
+  <!-- MMIO Cmd FIFO -->
+  <rect x="1030" y="390" width="400" height="65" rx="5" fill="#0a2018" stroke="#047857" stroke-width="1"/>
+  <text x="1230" y="414" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="bold">MMIO Command FIFO</text>
+  <text x="1230" y="432" text-anchor="middle" fill="#7ecba1" font-size="11">256b × 4-deep · base_addr, M, N, K, stride</text>
+  <text x="1230" y="448" text-anchor="middle" fill="#7ecba1" font-size="10">+ dataflow_mode field from BKM header</text>
+
+  <!-- DMA Engine -->
+  <rect x="1030" y="520" width="400" height="60" rx="5" fill="#0a2018" stroke="#047857" stroke-width="1"/>
+  <text x="1230" y="544" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="bold">DMA Engine</text>
+  <text x="1230" y="562" text-anchor="middle" fill="#7ecba1" font-size="11">256-bit burst · fetches A[4×K] &amp; B[K×4] tiles</text>
+
+  <!-- ── 4×4 PE Array (Mode 0 Dense) ── -->
+  <rect x="1030" y="650" width="250" height="180" rx="5" fill="#0a2018" stroke="#047857" stroke-width="1"/>
+  <text x="1155" y="672" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="bold">4×4 PE Array</text>
+  <rect x="1060" y="678" width="100" height="16" rx="3" fill="#059669" opacity="0.2"/>
+  <text x="1110" y="690" text-anchor="middle" fill="#34d399" font-size="10" font-weight="bold">Mode 0 Dense Datapath</text>
+
+  <!-- Mini PE grid -->
+  <rect x="1060" y="702" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1075" y="717" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+  <rect x="1095" y="702" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1110" y="717" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+  <rect x="1130" y="702" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1145" y="717" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+  <rect x="1165" y="702" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1180" y="717" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+
+  <rect x="1060" y="728" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1075" y="743" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+  <rect x="1095" y="728" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1110" y="743" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+  <rect x="1130" y="728" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1145" y="743" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+  <rect x="1165" y="728" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1180" y="743" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+
+  <rect x="1060" y="754" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1075" y="769" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+  <rect x="1095" y="754" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1110" y="769" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+  <rect x="1130" y="754" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1145" y="769" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+  <rect x="1165" y="754" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1180" y="769" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+
+  <rect x="1060" y="780" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1075" y="795" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+  <rect x="1095" y="780" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1110" y="795" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+  <rect x="1130" y="780" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1145" y="795" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+  <rect x="1165" y="780" width="30" height="22" rx="2" fill="#0d2b1f" stroke="#059669" stroke-width="0.7"/>
+  <text x="1180" y="795" text-anchor="middle" fill="#6ee7b7" font-size="8">PE</text>
+
+  <text x="1155" y="822" text-anchor="middle" fill="#7ecba1" font-size="10">INT8 × INT8 → INT32 acc</text>
+
+  <!-- ── Future Sparse RTL (dashed roadmap) ── -->
+  <rect x="1300" y="650" width="140" height="180" rx="5" fill="none" stroke="#059669" stroke-width="1.2" stroke-dasharray="6,4" opacity="0.5"/>
+  <text x="1370" y="718" text-anchor="middle" fill="#059669" font-size="10" opacity="0.7">Future</text>
+  <text x="1370" y="733" text-anchor="middle" fill="#059669" font-size="10" opacity="0.7">Sparse RTL</text>
+  <text x="1370" y="748" text-anchor="middle" fill="#059669" font-size="10" opacity="0.7">Datapath</text>
+  <text x="1370" y="770" text-anchor="middle" fill="#059669" font-size="9" opacity="0.5">(Modes 1 &amp; 2)</text>
+
+  <!-- Result Registers -->
+  <rect x="1030" y="900" width="400" height="60" rx="5" fill="#0a2018" stroke="#047857" stroke-width="1"/>
+  <text x="1230" y="924" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="bold">Result Registers C[4][4]</text>
+  <text x="1230" y="944" text-anchor="middle" fill="#7ecba1" font-size="11">16 × INT32 accumulators · MMIO readable</text>
+
+  <!-- Accel internal vertical arrows -->
+  <line x1="1230" y1="455" x2="1230" y2="520" stroke="#34d399" stroke-width="1.3" marker-end="url(#ag)"/>
+  <text x="1244" y="492" fill="#7ecba1" font-size="10">cmd</text>
+  <line x1="1230" y1="580" x2="1230" y2="650" stroke="#34d399" stroke-width="1.3" marker-end="url(#ag)"/>
+  <text x="1244" y="620" fill="#7ecba1" font-size="10">tiles</text>
+  <line x1="1155" y1="830" x2="1155" y2="900" stroke="#34d399" stroke-width="1.3" marker-end="url(#ag)"/>
+  <text x="1170" y="870" fill="#7ecba1" font-size="10">acc out</text>
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--       DMA ↔ Memory (256b bulk data path)            -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <line x1="1030" y1="540" x2="965" y2="540" stroke="#34d399" stroke-width="1.3" marker-end="url(#ag)"/>
+  <text x="995" y="534" text-anchor="middle" fill="#7ecba1" font-size="11">dma_addr</text>
+
+  <line x1="965" y1="560" x2="1030" y2="560" stroke="#e8a735" stroke-width="2.5" marker-end="url(#am)"/>
+  <rect x="974" y="548" width="44" height="16" rx="3" fill="#0a0c10"/>
+  <text x="996" y="560" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="bold">256b</text>
+
+  <line x1="965" y1="540" x2="965" y2="625" stroke="#e8a735" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="965" y1="625" x2="920" y2="625" stroke="#e8a735" stroke-width="1.3"/>
+  <text x="955" y="640" text-anchor="end" fill="#c4a862" font-size="10">DMA port</text>
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--          MMIO BUS (CPU ↔ MorphCore)                 -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <line x1="430" y1="1100" x2="1230" y2="1100" stroke="#c084fc" stroke-width="1.8" marker-end="url(#ap)"/>
+  <text x="435" y="1093" fill="#c084fc" font-size="12" font-weight="bold">mmio_we / mmio_re →</text>
+  <text x="860" y="1093" text-anchor="middle" fill="#c084fc" font-size="11">store wdata → Command FIFO</text>
+
+  <!-- rdata return -->
+  <line x1="1230" y1="960" x2="1230" y2="1130" stroke="#34d399" stroke-width="1" opacity="0.5"/>
+  <line x1="1230" y1="1130" x2="560" y2="1130" stroke="#c084fc" stroke-width="1.8" marker-end="url(#ap)"/>
+  <line x1="560" y1="1130" x2="560" y2="407" stroke="#c084fc" stroke-width="1.1" opacity="0.5"/>
+  <line x1="560" y1="407" x2="523" y2="407" stroke="#c084fc" stroke-width="1.3" marker-end="url(#ap)"/>
+  <text x="565" y="400" fill="#c084fc" font-size="10" font-weight="bold">rdata</text>
+  <text x="560" y="1146" fill="#c084fc" font-size="12" font-weight="bold">← mmio_rdata (32b)</text>
+  <text x="860" y="1146" text-anchor="middle" fill="#c084fc" font-size="11">C[i][j] → CPU WB stage</text>
+
+  <!-- MMIO bypass ticks through memory -->
+  <line x1="795" y1="1094" x2="795" y2="1106" stroke="#60605a" stroke-width="2"/>
+  <line x1="795" y1="1124" x2="795" y2="1136" stroke="#60605a" stroke-width="2"/>
+
+
+  <!-- ╔═══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║     FEEDBACK LOOP: SoC → RL Daemon (cycle count reward)       ║ -->
+  <!-- ╚═══════════════════════════════════════════════════════════════╝ -->
+  <path d="M760,1220 L760,1270 L1490,1270 L1490,120 L430,120" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="8,4" marker-end="url(#ay)"/>
+
+  <!-- Reward label on bottom segment -->
+  <rect x="880" y="1257" width="340" height="20" rx="4" fill="#0a0c10"/>
+  <text x="1050" y="1272" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="bold">⟲ Reward: Simulated Physical Cycle Count</text>
+
+  <!-- Label on right vertical segment -->
+  <text x="1485" y="700" fill="#fbbf24" font-size="11" font-weight="bold" transform="rotate(-90, 1485, 700)">feedback to RL agent</text>
+
+  <!-- Cycle counter box at SoC bottom -->
+  <rect x="660" y="1180" width="200" height="35" rx="5" fill="#1c1708" stroke="#fbbf24" stroke-width="1.2"/>
+  <text x="760" y="1202" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="bold">Cycle Counter</text>
+  <text x="760" y="1213" text-anchor="middle" fill="#c4a862" font-size="9">tohost signal → sim_main.cpp</text>
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--                     LEGEND                          -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="40" y="1310" width="1440" height="70" rx="6" fill="#111827" stroke="#30363d" stroke-width="1"/>
+  <text x="60" y="1330" fill="#e2e8f0" font-size="11" font-weight="bold">SIGNAL LEGEND</text>
+
+  <line x1="60" y1="1352" x2="100" y2="1352" stroke="#818cf8" stroke-width="2"/>
+  <text x="108" y="1356" fill="#c9d1d9" font-size="11">Pipeline</text>
+
+  <line x1="175" y1="1352" x2="215" y2="1352" stroke="#e8a735" stroke-width="2.5"/>
+  <text x="223" y="1356" fill="#c9d1d9" font-size="11">Data bus</text>
+
+  <line x1="300" y1="1352" x2="340" y2="1352" stroke="#c084fc" stroke-width="2"/>
+  <text x="348" y="1356" fill="#c9d1d9" font-size="11">MMIO</text>
+
+  <line x1="400" y1="1352" x2="440" y2="1352" stroke="#f87171" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="448" y="1356" fill="#c9d1d9" font-size="11">Fwd/Stall</text>
+
+  <line x1="530" y1="1352" x2="570" y2="1352" stroke="#34d399" stroke-width="2"/>
+  <text x="578" y="1356" fill="#c9d1d9" font-size="11">Accel flow</text>
+
+  <line x1="660" y1="1352" x2="700" y2="1352" stroke="#fb7185" stroke-width="2"/>
+  <text x="708" y="1356" fill="#c9d1d9" font-size="11">Host/compile</text>
+
+  <line x1="810" y1="1352" x2="850" y2="1352" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <text x="858" y="1356" fill="#c9d1d9" font-size="11">RL feedback</text>
+
+  <rect x="970" y="1346" width="4" height="14" rx="1" fill="#4f46e5" opacity="0.8"/>
+  <text x="985" y="1356" fill="#c9d1d9" font-size="11">Pipe reg</text>
+
+  <rect x="1060" y="1346" width="40" height="14" rx="3" fill="none" stroke="#059669" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+  <text x="1115" y="1356" fill="#c9d1d9" font-size="11">Future HW</text>
+
+  <line x1="1200" y1="1348" x2="1240" y2="1348" stroke="#b0bec5" stroke-width="1"/>
+  <line x1="1200" y1="1356" x2="1240" y2="1356" stroke="#b0bec5" stroke-width="2.5"/>
+  <text x="1248" y="1356" fill="#c9d1d9" font-size="11">Width = bus width</text>
+
+  <!-- ── MMIO Explainer ── -->
+  <rect x="40" y="1395" width="460" height="42" rx="5" fill="#1a122e" stroke="#c084fc" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="270" y="1413" text-anchor="middle" fill="#c084fc" font-size="12" font-weight="bold">MMIO — Memory-Mapped I/O</text>
+  <text x="270" y="1429" text-anchor="middle" fill="#a0aec0" font-size="11">CPU sw/lw instructions target addr[31]=1 to talk to MorphCore accelerator</text>
+
+  <!-- ── Co-Design summary ── -->
+  <rect x="520" y="1395" width="960" height="42" rx="5" fill="#1a0a14" stroke="#e11d48" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="1000" y="1413" text-anchor="middle" fill="#fda4af" font-size="12" font-weight="bold">Co-Design Loop: RL Agent → BKM Ledger → Python Compiler → model_blob.h → Main Memory → Firmware Dispatcher → MorphCore → Cycle Count → RL Agent</text>
+  <text x="1000" y="1429" text-anchor="middle" fill="#d4a0b0" font-size="10">each iteration refines tile sizes, prefetch depth, and dataflow mode to minimize end-to-end inference cycles</text>
+
+</svg>

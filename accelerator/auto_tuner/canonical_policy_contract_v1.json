@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "contract_name": "rl_to_logistic_policy_canonical_v1",
+  "dataset_source_of_truth": {
+    "type": "parquet",
+    "builder": "auto_tuner/trace_to_parquet.py",
+    "builder_args": {
+      "all_traces": true,
+      "valid_only": true,
+      "partition_cols": [
+        "workload_tag",
+        "sparsity_bucket",
+        "run_date_utc"
+      ]
+    },
+    "output_dir": "data/canonical/trace_dataset_v1",
+    "metadata_json": "data/canonical/trace_dataset_v1/_dataset_meta.json"
+  },
+  "logistic_regression_config": {
+    "selection_policy": "topk",
+    "top_k": 5,
+    "within_pct": 0.05,
+    "regret_weight_alpha": 0.0,
+    "min_sample_weight": 0.05,
+    "confidence_fallback_threshold": 0.3,
+    "seed": 17,
+    "eval_fraction": 0.2,
+    "epochs": 400,
+    "learning_rate": 0.15,
+    "l2": 0.0001
+  },
+  "canonical_training_command": "make policy_train_canonical PYTHON=.venv-mcp/bin/python",
+  "canonical_artifacts": {
+    "best_params_json": "data/canonical/policy/best_params_v1.json",
+    "artifact_manifest_json": "data/canonical/policy/best_params_v1.manifest.json",
+    "rl_space_contract_json": "data/canonical/policy/rl_exploration_space_v1.json"
+  },
+  "experiment_namespace": {
+    "note": "Keep exploratory runs/configs under data/experiments/ or custom non-canonical paths.",
+    "forbidden_to_overwrite": [
+      "data/canonical/trace_dataset_v1",
+      "data/canonical/policy/best_params_v1.json",
+      "data/canonical/policy/best_params_v1.manifest.json"
+    ]
+  }
+}

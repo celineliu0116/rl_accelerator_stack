@@ -1,0 +1,143 @@
+{
+    "128x128x784_act1": {
+        "tile_m": 16,
+        "tile_n": 28,
+        "burst_size": 64,
+        "prefetch_depth": 1,
+        "tile_b": 1,
+        "hardware_dataflow_mode": 1,
+        "ipc": 0.03325889675488193
+    },
+    "64x128x576_act1_convolution_sp2": {
+        "tile_m": 12,
+        "tile_n": 12,
+        "burst_size": 32,
+        "prefetch_depth": 2,
+        "tile_b": 1,
+        "hardware_dataflow_mode": 1,
+        "ipc": 0.0266670730220651,
+        "workload_tag": "convolution",
+        "sparsity_bucket": 2
+    },
+    "196x64x288_act1_convolution_sp1": {
+        "tile_m": 12,
+        "tile_n": 4,
+        "burst_size": 32,
+        "prefetch_depth": 1,
+        "tile_b": 1,
+        "hardware_dataflow_mode": 0,
+        "ipc": 0.07832430738933895,
+        "workload_tag": "convolution",
+        "sparsity_bucket": 1
+    },
+    "49x256x576_act1_convolution_sp2": {
+        "tile_m": 16,
+        "tile_n": 32,
+        "burst_size": 64,
+        "prefetch_depth": 2,
+        "tile_b": 1,
+        "hardware_dataflow_mode": 2,
+        "ipc": 0.0019892059998999714,
+        "workload_tag": "convolution",
+        "sparsity_bucket": 2
+    },
+    "256x1024x128_act1_sparse_mlp_sp8": {
+        "tile_m": 8,
+        "tile_n": 24,
+        "burst_size": 16,
+        "prefetch_depth": 1,
+        "tile_b": 2,
+        "hardware_dataflow_mode": 1,
+        "ipc": 0.013532322919888649,
+        "workload_tag": "sparse_mlp",
+        "sparsity_bucket": 8
+    },
+    "128x256x128_act0_gemm_sp0": {
+        "tile_m": 12,
+        "tile_n": 32,
+        "burst_size": 32,
+        "prefetch_depth": 2,
+        "tile_b": 1,
+        "hardware_dataflow_mode": 0,
+        "ipc": 0.05743165632896853,
+        "workload_tag": "gemm",
+        "sparsity_bucket": 0
+    },
+    "64x128x128_act0_gemm_sp0": {
+        "tile_m": 8,
+        "tile_n": 32,
+        "burst_size": 16,
+        "prefetch_depth": 2,
+        "tile_b": 1,
+        "hardware_dataflow_mode": 0,
+        "ipc": 0.0996157677529529,
+        "workload_tag": "gemm",
+        "sparsity_bucket": 0
+    },
+    "64x128x128_act0_attention_sp1": {
+        "tile_m": 4,
+        "tile_n": 32,
+        "burst_size": 64,
+        "prefetch_depth": 2,
+        "tile_b": 1,
+        "hardware_dataflow_mode": 0,
+        "ipc": 0.09837540052841644,
+        "workload_tag": "attention",
+        "sparsity_bucket": 1
+    },
+    "256x128x128_act0_attention_sp1": {
+        "tile_m": 8,
+        "tile_n": 16,
+        "burst_size": 16,
+        "prefetch_depth": 2,
+        "tile_b": 1,
+        "hardware_dataflow_mode": 0,
+        "ipc": 0.09768895835659261,
+        "workload_tag": "attention",
+        "sparsity_bucket": 1
+    },
+    "128x768x256_act1_sparse_mlp_sp8": {
+        "tile_m": 4,
+        "tile_n": 4,
+        "burst_size": 16,
+        "prefetch_depth": 2,
+        "tile_b": 2,
+        "hardware_dataflow_mode": 1,
+        "ipc": 0.011333059181235044,
+        "workload_tag": "sparse_mlp",
+        "sparsity_bucket": 8
+    },
+    "256x128x192_act0_gemm_sp1": {
+        "tile_m": 12,
+        "tile_n": 32,
+        "burst_size": 16,
+        "prefetch_depth": 1,
+        "tile_b": 1,
+        "hardware_dataflow_mode": 0,
+        "ipc": 0.06963095593355217,
+        "workload_tag": "gemm",
+        "sparsity_bucket": 1
+    },
+    "128x256x256_act0_attention_sp1": {
+        "tile_m": 4,
+        "tile_n": 28,
+        "burst_size": 32,
+        "prefetch_depth": 2,
+        "tile_b": 1,
+        "hardware_dataflow_mode": 1,
+        "ipc": 0.03135105115595804,
+        "workload_tag": "attention",
+        "sparsity_bucket": 1
+    },
+    "64x512x256_act1_sparse_mlp_sp7": {
+        "tile_m": 4,
+        "tile_n": 24,
+        "burst_size": 32,
+        "prefetch_depth": 1,
+        "tile_b": 1,
+        "hardware_dataflow_mode": 1,
+        "ipc": 2.7624309392265194,
+        "workload_tag": "sparse_mlp",
+        "sparsity_bucket": 7
+    }
+}

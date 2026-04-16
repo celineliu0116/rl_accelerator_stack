@@ -1,0 +1,56 @@
+# Build artifacts
+obj_dir/
+*.elf
+*.bin
+*.hex
+*.dump
+*.o
+*.a
+
+# OS files
+.DS_Store
+
+# Vendored ML workspace local artifacts
+riscv-ml-inference/venv/
+riscv-ml-inference/train/data/
+riscv-ml-inference/runtime/inference
+
+# Build directory
+build/
+
+# Python artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Local runtime outputs
+*.log
+make_output.txt
+build_log.txt
+sim_output*.txt
+sim_test*.txt
+sim_trace*.txt
+verilator_direct_log.txt
+test.v
+
+# Local experiments and checkpoints
+data/
+results/*.log
+results/*.csv
+auto_tuner/ppo_systolic_agent_latest.zip
+mnist_mlp_quantized.pth
+
+# Generated headers/assets from autotune runs
+firmware/include/autotune_workload.h
+auto_tuner/.rl_step.lock
+auto_tuner/compiler/bkm_ledger.ml_candidate.json
+auto_tuner/compiler/bkm_ledger.ml_candidate_all.json
+
+# Agent runtime state (contains local traces and usage ledger)
+agents/runs/
+agents/budget_ledger.json
