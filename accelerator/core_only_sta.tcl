@@ -1,4 +1,4 @@
-set liberty_file "/Users/peter/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"
+set liberty_file "$::env(HOME)/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"
 set netlist_file "/work/OpenLane/designs/riscv_top/runs/syn_single_20260219/results/synthesis/Riscv151.v"
 
 read_liberty $liberty_file

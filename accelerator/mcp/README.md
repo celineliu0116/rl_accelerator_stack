@@ -61,9 +61,9 @@ Example MCP client entry:
 {
   "mcpServers": {
     "accelera": {
-      "command": "/Users/peter/accelera/.venv-mcp/bin/python",
-      "args": ["/Users/peter/accelera/mcp/accelera_mcp_server.py"],
-      "cwd": "/Users/peter/accelera"
+      "command": "/absolute/path/to/accelera/.venv-mcp/bin/python",
+      "args": ["/absolute/path/to/accelera/mcp/accelera_mcp_server.py"],
+      "cwd": "/absolute/path/to/accelera"
     }
   }
 }

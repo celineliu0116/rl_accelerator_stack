@@ -29,8 +29,9 @@ RUN python -m pip install --upgrade pip && \
 
 WORKDIR /workspace/accelera
 
-# Example:
-# docker run --rm -it -v /Users/peter/accelera:/workspace/accelera \
+# Example — run from the Accelera repository root:
+# docker run --rm -it \
+#   -v "$PWD:/workspace/accelera" \
 #   --name accelera-rl accelera-rl-daemon:latest \
 #   python auto_tuner/rl_daemon.py --timesteps 10000000
 
